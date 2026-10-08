@@ -1,0 +1,172 @@
+Delivered-To: phvaz2001@gmail.com
+Received: by 2002:a17:504:a045:20b0:1ef1:de65:aeea with SMTP id e5-n2csp1427635njb;
+        Mon, 5 Oct 2026 02:37:44 -0700 (PDT)
+X-Received: by 2002:a05:701b:458c:b0:148:bbae:ad2b with SMTP id a92af1059eb24-151c2b16e87mr9162173c88.11.1791193064430;
+        Mon, 05 Oct 2026 02:37:44 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1791193064; cv=none;
+        d=google.com; s=arc-20260327;
+        b=P5F+DzgY81vxrcj3aLWc80UXy19Nx7ONF1c3+PBxw+d3YeErGAOaaZz10+Yjl2RAes
+         4DxQKdeIsN6hTOzGxXHIAUL7rvwp9pYLF7bTAgmTPW69vgRWnis9RW0fjkBzhVAGoIkc
+         vsMh2LsrT+np8zTEjQuHMhTSTIP5ho5KopDeex6ezz8MfItbWWG6HDeJ7huysFzb2/FR
+         PbpgiS96wx9JOionIYpw+KsWf2/R14F2nQn4FYmOhQb43Ba1zvqwG9eFMbsWJLWleJ4U
+         27UtLv+rUZzzBFqE9yu8PbVaycSJE+AcydgWS4aWozkQC4cizi3ifZBuipq3zDV1h4C4
+         h3ug==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=feedback-id:mime-version:date:subject:reply-to:to:from:message-id
+         :dkim-signature:dkim-signature;
+        bh=aKXQNjy+Aley7lhCzjvW6x7/YfzouiTXjTtcmn97T1Y=;
+        fh=5Q+JZUIiUSs++4Q4hbCv28W35cA4HxxWJi24QAHBtNc=;
+        b=dkLc200j19LphSgZyJlFdW4fMyIMbkD8h5HVPA4Tdk7MWehg8kK8DEJsxoD1X7Zf4q
+         idOBiG+AZ9SmS5yvowPa3J/mwpC61WzFM1VRE+tQD26YxH5+h1GD7XjZJYpc9XZjw9Bg
+         0pgY77nlLcOtoV3GcT7PWRoeC2MTL57j7HCWo1F8ouopGgUWpD+iSQn42m+FDArGB9ME
+         c8CgsAgQBAClGb06w/3BoOPM9v0AMDUqdSNkqSVF6Jlt9b+VWPuNGNLHYAet+zbvcyPf
+         eNdP2IQNEQ1FAEBgDIajXFVedPIHLTfQVbU6I8rdkSxHC9jtnmn8LpttwL1Eq+e8KX60
+         E9GA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@hr.lineatalent.xyz header.s=resend header.b="DRSBvth/";
+       dkim=pass header.i=@amazonses.com header.s=n3kzslanjhdj36g2753vor472zw45rsk header.b=OrtxB8EV;
+       spf=pass (google.com: domain of 010301a10b6d1feb-89530428-678e-4998-a38c-849eb49c88c9-000000@rsend.hr.lineatalent.xyz designates 23.249.215.51 as permitted sender) smtp.mailfrom=010301a10b6d1feb-89530428-678e-4998-a38c-849eb49c88c9-000000@rsend.hr.lineatalent.xyz;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=lineatalent.xyz
+Return-Path: <010301a10b6d1feb-89530428-678e-4998-a38c-849eb49c88c9-000000@rsend.hr.lineatalent.xyz>
+Received: from d215-51.smtp-out.sa-east-1.amazonses.com (d215-51.smtp-out.sa-east-1.amazonses.com. [23.249.215.51])
+        by mx.google.com with ESMTPS id a92af1059eb24-1520131b2f6si21181715c88.78.2026.10.05.02.37.43
+        for <phvaz2001@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 05 Oct 2026 02:37:44 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010301a10b6d1feb-89530428-678e-4998-a38c-849eb49c88c9-000000@rsend.hr.lineatalent.xyz designates 23.249.215.51 as permitted sender) client-ip=23.249.215.51;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@hr.lineatalent.xyz header.s=resend header.b="DRSBvth/";
+       dkim=pass header.i=@amazonses.com header.s=n3kzslanjhdj36g2753vor472zw45rsk header.b=OrtxB8EV;
+       spf=pass (google.com: domain of 010301a10b6d1feb-89530428-678e-4998-a38c-849eb49c88c9-000000@rsend.hr.lineatalent.xyz designates 23.249.215.51 as permitted sender) smtp.mailfrom=010301a10b6d1feb-89530428-678e-4998-a38c-849eb49c88c9-000000@rsend.hr.lineatalent.xyz;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=lineatalent.xyz
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=resend;
+	d=hr.lineatalent.xyz; t=1791193063;
+	h=Message-ID:From:To:Reply-To:Subject:Date:MIME-Version:Content-Type;
+	bh=aMvuV+fQ0lfn39IPb4zjcSxYTAb8F4zp/AeD1QEkqIU=;
+	b=DRSBvth/SQz/FFJo8equbJr5yBUYRdzGZd+lv0ef0h8l8CwvPM3cIblkNEJrbp2V
+	5JGA/UgXFDBfU6sdQcDzHa7Zs6TyfidupBPoik1Y7qnVtT6hdTslAc7Wl67E5tSauim
+	MybVX9ixStIIsmJ8zcNg2xTjLXKei88txjm+Y3pc=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=n3kzslanjhdj36g2753vor472zw45rsk; d=amazonses.com; t=1791193063;
+	h=Message-ID:From:To:Reply-To:Subject:Date:MIME-Version:Content-Type:Feedback-ID;
+	bh=aMvuV+fQ0lfn39IPb4zjcSxYTAb8F4zp/AeD1QEkqIU=;
+	b=OrtxB8EVAdneFtQyQkL+Bx/CQvXLezLM7GgbOVrQNgeZfF3FfysVl6j5CckBB5B/
+	8O5gHbVSGq6+DqKiMFt+WJnzeU6cRjIv3neDTDggsrv+ZPWx9ygr12XrUiWx2scMbKE
+	6rJ4fATIL/y7HRiSbNJfm15gAaat2iTle+vpMTgs=
+Message-ID: <010301a10b6d1feb-89530428-678e-4998-a38c-849eb49c88c9-000000@sa-east-1.amazonses.com>
+From: Lisa Beck <lisabeck@hr.lineatalent.xyz>
+To: phvaz2001@gmail.com
+Reply-To: lisabeck@hr.lineatalent.xyz
+Subject: =?UTF-8?Q?Engineering_opening_=E2=80=94_Linea?=
+Date: Mon, 5 Oct 2026 09:37:43 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--_NmP-6cec14a72200ac53-Part_1"
+Feedback-ID: :1.sa-east-1.tGQMBo0CJ0zxQQx+ss6knEvI+D26j8yybAnw3V46aU/63jcsGk53u0lWUGAZRXcIQNHbdpkFzLj0M/d5NhPULnt/uu2zijxyxqRG/a0FZV+yGk4dpeoPmh7+LyaZnmOp7sjVFOy/tsQ7UdhyDx80yZk4I+TkhKu4P8oXklrefOc=:1.sa-east-1.tPjbfG5B2/Ae0pGxOMA6KOFdwxGFd8YoxubfBBL5Q0g=:AmazonSES
+X-SES-Outgoing: 2026.10.05-23.249.215.51
+
+----_NmP-6cec14a72200ac53-Part_1
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Engineering opening =E2=80=94 Linea
+ =20
+
+Hi phvaz,
+
+Your GitHub activity in blockchain repos stood out, so I wanted to share an=
+ engineering role on the zkEVM / L2 side at Linea.
+
+Linea is an Ethereum-equivalent zkEVM rollup built to scale Ethereum with =
+full tooling compatibility. Day to day is proving systems, L2 =
+infrastructure, and production services that settle back to mainnet.
+
+Role: Software Engineer
+
+Focus: zkEVM, L2 infrastructure, systems
+
+Location: remote / hybrid
+
+Type: full-time or part-time
+
+Open to mid-level and strong early-career engineers in the US, Asia, and =
+elsewhere.
+
+If this sounds relevant, a short reply with a resume or GitHub =
+link is enough. You can also review the brief here:
+
+https://lineatalent.xyz/
+
+Verification code: Ref-4h31zzxmmutk76
+
+Use this code on the careers page if you apply.
+
+Thanks,
+
+Lisa Beck
+
+Talent, Linea
+----_NmP-6cec14a72200ac53-Part_1
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+  <meta charset=3D"UTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <title>Engineering opening =E2=80=94 Linea</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+      color: #222;
+      background: #fff;
+    }
+    a { color: #1155cc; }
+  </style>
+</head>
+<body>
+
+<p>Hi phvaz,</p>
+
+<p>Your GitHub activity in blockchain repos stood out, so I wanted to share=
+ an engineering role on the zkEVM / L2 side at Linea.</p>
+
+<p><strong>Linea</strong> is an Ethereum-equivalent zkEVM rollup built to s=
+cale Ethereum with full tooling compatibility. Day to day is proving system=
+s, L2 infrastructure, and production services that settle back to mainnet.<=
+/p>
+
+<p><strong>Role:</strong> Software Engineer<br>
+<strong>Focus:</strong> zkEVM, L2 infrastructure, systems<br>
+<strong>Location:</strong> remote / hybrid<br>
+<strong>Type:</strong> full-time or part-time</p>
+
+<p>Open to mid-level and strong early-career engineers in the US, Asia, and=
+ elsewhere.</p>
+
+<p>If this sounds relevant, a short reply with a resume or GitHub link is e=
+nough. You can also review the brief here:<br>
+<a href=3D"https://lineatalent.xyz/">https://lineatalent.xyz/</a></p>
+
+<p><strong>Verification code: Ref-4h31zzxmmutk76</strong><br>
+<span style=3D"font-size:12px;color:#555;">Use this code on the careers pag=
+e if you apply.</span></p>
+
+<p>Thanks,<br>
+Lisa Beck<br>
+Talent, Linea</p>
+
+<img alt=3D"" src=3D"https://open.hr.lineatalent.xyz/CI0/010301a10b6d1feb-8=
+9530428-678e-4998-a38c-849eb49c88c9-000000/i5mawW_PSf3eopTyNvKZ2hlbjUmylVik=
+3zwIbHTallM=3D258" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html>
+
+----_NmP-6cec14a72200ac53-Part_1--
